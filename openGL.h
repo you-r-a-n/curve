@@ -4,6 +4,7 @@
 #include <GL/glew.h>    
 #include <GLFW/glfw3.h> 
 #include <vector>
+#include "bezier.h"
 
 #define pointCount 4
 #define pointWidth 5.0f
@@ -61,7 +62,7 @@ void drawCar()
 	glPointSize(pointWidth * 2);
 	glBegin(GL_POINTS);
 	glColor3f(0.0f, 1.0f, 1.0f);
-
+	vector<float>vertex3f;
 	if (T == 1)
 	{
 		glVertex3f(100, 100, 0);
