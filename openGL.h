@@ -69,9 +69,9 @@ void drawCar()
 	}
 	else
 	{
-		glVertex3f((1 - T) * (1 - T) * (1 - T) * points[0][0] + 3 * T * (1 - T) * (1 - T) * points[1][0] + 3 * T * T * (1 - T) * points[2][0] + T * T * T * points[3][0],
-			(1 - T) * (1 - T) * (1 - T) * points[0][1] + 3 * T * (1 - T) * (1 - T) * points[1][1] + 3 * T * T * (1 - T) * points[2][1] + T * T * T * points[3][1],
-			(1 - T) * (1 - T) * (1 - T) * points[0][2] + 3 * T * (1 - T) * (1 - T) * points[1][2] + 3 * T * T * (1 - T) * points[2][2] + T * T * T * points[3][2]);
+		vector<GLfloat> vertex3f = vector<float>(3);
+		Bezier::bezierPoint(T, vertex3f, points);
+		glVertex3f(vertex3f[0],vertex3f[1],vertex3f[2]);
 	}
 	T = T <= 1 ? T + 0.005 : 1;
 	glEnd();
@@ -81,23 +81,15 @@ void drawCar()
 //四个控制点的贝塞尔曲线
 void drawBezier(int n)
 {
-	float f1, f2, f3, f4;
+	vector<GLfloat> vertex3f = vector <GLfloat> (3);
 	float deltaT = 1.0 / n;
 	float T;
-	float x, y, z;
 	glBegin(GL_LINE_STRIP);
 	glColor3f(0.8f, 0.2f, 0.5f);
 	for (int i = 0; i <= n; i++) {
 		T = i * deltaT;
-		f1 = (1 - T) * (1 - T) * (1 - T);
-		f2 = 3 * T * (1 - T) * (1 - T);
-		f3 = 3 * T * T * (1 - T);
-		f4 = T * T * T;
-		x = f1 * points[0][0] + f2 * points[1][0] + f3 * points[2][0] + f4 * points[3][0];
-		y = f1 * points[0][1] + f2 * points[1][1] + f3 * points[2][1] + f4 * points[3][1];
-		z = f1 * points[0][2] + f2 * points[1][2] + f3 * points[2][2] + f4 * points[3][2];
-		glVertex3f(x, y, z);
-
+		Bezier::bezierPoint(T, vertex3f, points);
+		glVertex3f(vertex3f[0], vertex3f[1], vertex3f[2]);
 	}
 	glEnd();
 }
@@ -116,7 +108,7 @@ void render(GLFWwindow* window)
 	{
 		drawPoint();
 		drawBezier(20);
-		drawCar();
+		//drawCar();
 	}
 }
 
