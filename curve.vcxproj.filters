@@ -26,5 +26,26 @@
     <ClInclude Include="bezier.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="trajectory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Straight.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Road.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Curve.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Car.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Central.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

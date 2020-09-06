@@ -146,7 +146,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bezier.h" />
+    <ClInclude Include="Car.h" />
+    <ClInclude Include="Central.h" />
+    <ClInclude Include="Curve.h" />
+    <ClInclude Include="Entity.h" />
     <ClInclude Include="openGL.h" />
+    <ClInclude Include="Road.h" />
+    <ClInclude Include="Straight.h" />
+    <ClInclude Include="trajectory.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
