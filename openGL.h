@@ -13,6 +13,7 @@ using std::vector;
 GLuint WIDTH = 800, HEIGHT = 600;
 GLfloat mouseX, mouseY;
 vector<vector<GLfloat>> points(pointCount, vector<GLfloat>(3));//控制点存储数组
+
 int count = 0;
 static float T = 0.005;
 
@@ -96,8 +97,7 @@ void drawBezier(int n)
 
 void render(GLFWwindow* window)
 {
-	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-	glClear(GL_COLOR_BUFFER_BIT);// | GL_DEPTH_BUFFER_BIT);
+
 	//glEnable(GL_DEPTH_TEST);
 
 	if (count != 4)
